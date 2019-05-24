@@ -63,6 +63,6 @@ class ApiModule {
 
         const val TIMEOUT = 30L
 
-        const val API_HOST_BASE = "https://api.themoviedb.org/3"
+        const val API_HOST_BASE = "https://api.themoviedb.org/3/"
     }
 }
