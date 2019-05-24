@@ -10,4 +10,9 @@
         style="@style/Toolbar"
         app:title="@string/toolbar_discovery_title" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPopular"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_discovery_section_height" />
+
 </LinearLayout>

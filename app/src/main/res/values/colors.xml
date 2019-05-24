@@ -5,4 +5,5 @@
     <color name="color_accent">#8096f9</color>
     <color name="text_dark">#000</color>
     <color name="text_regular">#444</color>
+    <color name="iv_placeholder">#7C7C7C</color>
 </resources>

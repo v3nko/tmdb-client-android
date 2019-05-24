@@ -10,4 +10,8 @@
     <dimen name="view_margin_regular">16dp</dimen>
     <dimen name="view_margin_medium">24dp</dimen>
     <dimen name="view_margin_large">48dp</dimen>
+
+    <!-- Discovery -->
+    <dimen name="view_discovery_section_height">170dp</dimen>
+    <!-- END: Discovery -->
 </resources>
