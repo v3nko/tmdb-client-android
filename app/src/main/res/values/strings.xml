@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TMDb Client</string>
+
+    <!-- Discovery -->
+    <string name="toolbar_discovery_title">Catalog</string>
+    <!-- END: Discovery -->
+</resources>

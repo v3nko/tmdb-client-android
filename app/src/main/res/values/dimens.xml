@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="view_padding_regular">16dp</dimen>
+    <dimen name="view_padding_medium">24dp</dimen>
+    <dimen name="view_padding_big">36dp</dimen>
+    <dimen name="view_padding_small">4dp</dimen>
+    <dimen name="view_padding_half_regular">8dp</dimen>
+    <dimen name="view_margin_small">4dp</dimen>
+    <dimen name="view_margin_half_regular">8dp</dimen>
+    <dimen name="view_margin_regular">16dp</dimen>
+    <dimen name="view_margin_medium">24dp</dimen>
+    <dimen name="view_margin_large">48dp</dimen>
+</resources>
