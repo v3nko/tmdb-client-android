@@ -52,6 +52,8 @@ dependencies {
     def retrofit2_coroutines_version = "0.9.2"
     def glide_version = "4.9.0"
     def recyclerview_version = "1.0.0"
+    def paging_version = "2.1.0"
+    def threetenabp_version = "1.2.0"
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
@@ -81,4 +83,6 @@ dependencies {
     implementation "com.github.bumptech.glide:annotations:$glide_version"
     implementation "com.github.bumptech.glide:okhttp3-integration:$glide_version"
     implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+    implementation "androidx.paging:paging-runtime:$paging_version"
+    implementation "com.jakewharton.threetenabp:threetenabp:$threetenabp_version"
 }
