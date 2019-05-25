@@ -38,11 +38,17 @@ class DiscoveryViewModel : BaseViewModel() {
         Injector.appComponent().inject(this)
     }
 
+    // Temporary initialization state until separate section states is implemented
+    private var loadRequested = false
+
     fun loadDiscovery() {
-        popularMovies = initPagedLiveData(::getPopularMovies)
-        topRatedMovies = initPagedLiveData(::getTopRatedMovies)
-        topRevenueMovies = initPagedLiveData(::getTopRevenueMovies)
-        mostRecentMovies = initPagedLiveData(::getMostRecentMovies)
+        if (!loadRequested) {
+            loadRequested = true
+            popularMovies = initPagedLiveData(::getPopularMovies)
+            topRatedMovies = initPagedLiveData(::getTopRatedMovies)
+            topRevenueMovies = initPagedLiveData(::getTopRevenueMovies)
+            mostRecentMovies = initPagedLiveData(::getMostRecentMovies)
+        }
     }
 
     fun displayMovieDetails(movie: Movie) {

@@ -11,6 +11,7 @@
         app:title="@string/toolbar_discovery_title" />
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/svDiscovery"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
