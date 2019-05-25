@@ -19,6 +19,11 @@ import me.venko.tmdbclient.presentation.common.recyclerview.HorizontalMarginItem
  *
  */
 class DiscoveryFragment : BaseFragment() {
+
+    companion object {
+        fun newInstance() = DiscoveryFragment()
+    }
+
     override val layoutId: Int = R.layout.fragment_discovery
 
     private lateinit var discoveryViewModel: DiscoveryViewModel
@@ -39,7 +44,9 @@ class DiscoveryFragment : BaseFragment() {
     }
 
     private fun setupDiscoverySection(recyclerView: RecyclerView, data: LiveData<PagedList<Movie>>): MoviesAdapter {
-        val moviesAdapter = MoviesAdapter(requireContext())
+        val moviesAdapter = MoviesAdapter(requireContext(), onItemClick = {
+            discoveryViewModel.displayMovieDetails(it)
+        })
         with(recyclerView) {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             addItemDecoration(

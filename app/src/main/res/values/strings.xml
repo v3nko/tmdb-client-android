@@ -4,4 +4,8 @@
     <!-- Discovery -->
     <string name="toolbar_discovery_title">Catalog</string>
     <!-- END: Discovery -->
+
+    <!-- Movie details -->
+    <string name="toolbar_movie_details_title">Details</string>
+    <!-- END: Movie details -->
 </resources>

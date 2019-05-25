@@ -12,6 +12,24 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">?android:attr/actionBarSize</item>
         <item name="android:background">@color/color_primary</item>
+        <item name="titleTextAppearance">@style/TextAppearance.Toolbar</item>
+    </style>
+
+    <style name="TextAppearance.Toolbar" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="textAllCaps">true</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="TextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/text_regular</item>
+    </style>
+
+    <style name="TextAppearance.Caption">
+        <item name="android:textSize">@dimen/text_large</item>
+    </style>
+
+    <style name="TextAppearance.RegularContent">
+        <item name="android:textSize">@dimen/text_regular</item>
     </style>
 
 </resources>

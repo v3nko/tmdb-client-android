@@ -19,7 +19,8 @@ import me.venko.tmdbclient.presentation.common.glide.TmdbImageModel
  * @author Victor Kosenko
  *
  */
-class MoviesAdapter(val context: Context) : PagedListAdapter<Movie, MoviesAdapter.ViewHolder>(DIFF_CALLBACK) {
+class MoviesAdapter(val context: Context, val onItemClick: (Movie) -> Unit) :
+    PagedListAdapter<Movie, MoviesAdapter.ViewHolder>(DIFF_CALLBACK) {
 
     companion object {
         val DIFF_CALLBACK: DiffUtil.ItemCallback<Movie> = object : DiffUtil.ItemCallback<Movie>() {
@@ -41,6 +42,7 @@ class MoviesAdapter(val context: Context) : PagedListAdapter<Movie, MoviesAdapte
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = getItem(position)
         item?.let {
+            holder.itemView.setOnClickListener { onItemClick(item) }
             Glide.with(context)
                 .load(TmdbImageModel.forPoster(it))
                 .placeholder(R.drawable.img_default_placeholder)

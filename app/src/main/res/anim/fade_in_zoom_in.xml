@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="@integer/fragment_default_animation_duration"
+    android:interpolator="@anim/fast_out_slow_in_interpolator"
+    android:startOffset="@integer/fragment_default_animation_offset">
+    <alpha
+        android:fromAlpha="0"
+        android:toXDelta="1" />
+    <scale
+        android:fromXScale="0.95"
+        android:fromYScale="0.95"
+        android:toXScale="1"
+        android:toYScale="1" />
+</set>

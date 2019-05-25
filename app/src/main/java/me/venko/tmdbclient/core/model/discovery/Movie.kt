@@ -1,13 +1,16 @@
 package me.venko.tmdbclient.core.model.discovery
 
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
+import kotlinx.android.parcel.Parcelize
 
 /**
  * @author Victor Kosenko
  *
  */
+@Parcelize
 @JsonClass(generateAdapter = true)
 data class Movie(
     @Json(name = "vote_count")
@@ -32,4 +35,4 @@ data class Movie(
     val overview: String,
     @Json(name = "release_date")
     val releaseDate: String
-)
+) : Parcelable

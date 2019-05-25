@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        style="@style/Toolbar"
+        app:title="@string/toolbar_movie_details_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBackdrop"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                android:src="@color/iv_placeholder"
+                app:layout_constraintDimensionRatio="1.78"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovieTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_margin_regular"
+                android:layout_marginTop="@dimen/view_margin_half_regular"
+                android:layout_marginEnd="@dimen/view_margin_regular"
+                android:textAppearance="@style/TextAppearance.Caption"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivBackdrop"
+                tools:text="Avengers: Infinity War" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivRatingStar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_margin_regular"
+                android:layout_marginTop="@dimen/view_margin_half_regular"
+                android:src="@drawable/ic_star_black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMovieTitle" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovieRating"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_margin_small"
+                android:layout_marginEnd="@dimen/view_margin_regular"
+                android:maxLines="1"
+                android:textAppearance="@style/TextAppearance.RegularContent"
+                app:layout_constraintBottom_toBottomOf="@id/ivRatingStar"
+                app:layout_constraintStart_toEndOf="@id/ivRatingStar"
+                app:layout_constraintTop_toBottomOf="@id/tvMovieTitle"
+                app:layout_constraintTop_toTopOf="@id/ivRatingStar"
+                tools:text="6.5" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMovieDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_margin_regular"
+                android:layout_marginTop="@dimen/view_margin_half_regular"
+                android:layout_marginEnd="@dimen/view_margin_regular"
+                android:layout_marginBottom="@dimen/view_margin_half_regular"
+                android:textAppearance="@style/TextAppearance.RegularContent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivRatingStar"
+                tools:text="When the dagger travels for madagascar, all gibbets command undead, fine seas." />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>

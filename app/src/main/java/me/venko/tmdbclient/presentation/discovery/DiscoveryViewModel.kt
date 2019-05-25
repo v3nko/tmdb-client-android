@@ -1,6 +1,21 @@
 package me.venko.tmdbclient.presentation.discovery
 
+import androidx.lifecycle.LiveData
+import androidx.paging.LivePagedListBuilder
+import androidx.paging.PagedList
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import me.venko.tmdbclient.core.interactor.MoviesDiscoveryInteractor
+import me.venko.tmdbclient.core.model.common.Result
+import me.venko.tmdbclient.core.model.discovery.DiscoveryItems
+import me.venko.tmdbclient.core.model.discovery.Movie
+import me.venko.tmdbclient.di.Injector
+import me.venko.tmdbclient.navigation.MovieDetailsScreen
 import me.venko.tmdbclient.presentation.common.viewmodel.BaseViewModel
+import me.venko.tmdbclient.utils.loge
+import ru.terrakok.cicerone.Router
+import javax.inject.Inject
 
 /**
  * @author Victor Kosenko
@@ -10,6 +25,9 @@ class DiscoveryViewModel : BaseViewModel() {
 
     @Inject
     lateinit var discoveryInteractor: MoviesDiscoveryInteractor
+
+    @Inject
+    lateinit var router: Router
 
     lateinit var popularMovies: LiveData<PagedList<Movie>>
     lateinit var topRatedMovies: LiveData<PagedList<Movie>>
@@ -25,6 +43,10 @@ class DiscoveryViewModel : BaseViewModel() {
         topRatedMovies = initPagedLiveData(::getTopRatedMovies)
         topRevenueMovies = initPagedLiveData(::getTopRevenueMovies)
         mostRecentMovies = initPagedLiveData(::getMostRecentMovies)
+    }
+
+    fun displayMovieDetails(movie: Movie) {
+        router.navigateTo(MovieDetailsScreen(movie))
     }
 
     private fun createDefaultPageListConfig() = PagedList.Config.Builder()
