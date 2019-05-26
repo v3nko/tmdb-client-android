@@ -10,6 +10,7 @@
     <dimen name="view_margin_regular">16dp</dimen>
     <dimen name="view_margin_medium">24dp</dimen>
     <dimen name="view_margin_large">48dp</dimen>
+    <dimen name="view_divider_size">1dp</dimen>
 
     <dimen name="text_regular">16sp</dimen>
     <dimen name="text_large">30dp</dimen>

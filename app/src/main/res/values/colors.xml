@@ -6,4 +6,5 @@
     <color name="text_dark">#000</color>
     <color name="text_regular">#1B1B1B</color>
     <color name="iv_placeholder">#7C7C7C</color>
+    <color name="view_panels_divider">#2E2E2E</color>
 </resources>

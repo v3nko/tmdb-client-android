@@ -11,9 +11,9 @@
         android:layout_weight="1" />
 
     <View
-        android:layout_width="1dp"
+        android:layout_width="@dimen/view_divider_size"
         android:layout_height="match_parent"
-        android:background="#000" />
+        android:background="@color/view_panels_divider" />
 
     <FrameLayout
         android:id="@+id/viewContainerDetails"
