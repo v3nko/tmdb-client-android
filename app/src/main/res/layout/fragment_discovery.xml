@@ -20,26 +20,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvPopular"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/view_discovery_section_height" />
+            <include layout="@layout/section_discovery_popular" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvTopRated"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/view_discovery_section_height" />
+            <include layout="@layout/section_discovery_top_rated" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvTopRevenue"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/view_discovery_section_height" />
+            <include layout="@layout/section_discovery_top_revenue" />
 
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvMostRecent"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/view_discovery_section_height" />
+            <include layout="@layout/section_discovery_most_recent" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 

@@ -3,6 +3,8 @@
 
     <!-- Discovery -->
     <string name="toolbar_discovery_title">Catalog</string>
+    <string name="tv_discovery_section_content_empty">No items to display</string>
+    <string name="tv_discovery_section_content_error">Unable to load section</string>
     <!-- END: Discovery -->
 
     <!-- Movie details -->
