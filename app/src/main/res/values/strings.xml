@@ -9,5 +9,6 @@
 
     <!-- Movie details -->
     <string name="toolbar_movie_details_title">Details</string>
+    <string name="tv_details_placeholder">Please, choose the movie from the Catalog to see it\'s details.</string>
     <!-- END: Movie details -->
 </resources>

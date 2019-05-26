@@ -19,8 +19,15 @@ class RootActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_root)
         rootViewModel = ViewModelProviders.of(this).get(AppRootViewModel::class.java)
-        if (savedInstanceState == null) {
-            rootViewModel.coldStart()
+
+        // This approach allows us detect if user was using multi-window mode with a small sized
+        // window which is detected as phone layout and than returned to tablet layout in some way
+        // (by returning app to full screen or stretching window to a larger size). In that case we
+        // should re-init master screen fragment as it can contain more than one fragment in stack.
+        val modeChangedToTablet = isModeChangedToTablet(savedInstanceState)
+
+        if (savedInstanceState == null || modeChangedToTablet) {
+            rootViewModel.coldStart(isTablet)
         }
     }
 

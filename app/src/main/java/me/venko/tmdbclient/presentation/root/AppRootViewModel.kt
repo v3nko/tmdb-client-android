@@ -2,8 +2,9 @@ package me.venko.tmdbclient.presentation.root
 
 import me.venko.tmdbclient.di.Injector
 import me.venko.tmdbclient.navigation.DiscoveryScreen
+import me.venko.tmdbclient.navigation.MovieDetailsPlaceholderScreen
+import me.venko.tmdbclient.navigation.router.MultipaneRouter
 import me.venko.tmdbclient.presentation.common.viewmodel.BaseViewModel
-import ru.terrakok.cicerone.Router
 import javax.inject.Inject
 
 /**
@@ -17,9 +18,13 @@ class AppRootViewModel : BaseViewModel() {
     }
 
     @Inject
-    lateinit var router: Router
+    lateinit var router: MultipaneRouter
 
-    fun coldStart() {
-        router.newRootScreen(DiscoveryScreen())
+    fun coldStart(isTablet: Boolean) {
+        if (isTablet) {
+            router.newRootChainDetails(DiscoveryScreen(), MovieDetailsPlaceholderScreen())
+        } else {
+            router.newRootScreen(DiscoveryScreen())
+        }
     }
 }
