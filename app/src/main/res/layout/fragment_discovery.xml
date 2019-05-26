@@ -10,26 +10,10 @@
         style="@style/Toolbar"
         app:title="@string/toolbar_discovery_title" />
 
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/svDiscovery"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDiscovery"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <include layout="@layout/section_discovery_popular" />
-
-            <include layout="@layout/section_discovery_top_rated" />
-
-            <include layout="@layout/section_discovery_top_revenue" />
-
-            <include layout="@layout/section_discovery_most_recent" />
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-    </androidx.core.widget.NestedScrollView>
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

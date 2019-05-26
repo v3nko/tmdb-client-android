@@ -2,30 +2,28 @@
 
 <androidx.appcompat.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/view_discovery_section_height"
-    tools:showIn="@layout/fragment_discovery">
+    android:layout_height="@dimen/view_discovery_section_height">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvPopular"
+            android:id="@+id/rvMovies"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:visibility="gone" />
 
         <androidx.core.widget.ContentLoadingProgressBar
-            android:id="@+id/pbPopularLoading"
+            android:id="@+id/pbLoading"
             style="?android:attr/progressBarStyleLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tvPopularStatus"
+            android:id="@+id/tvContentStatus"
             style="@style/TextAppearance.RegularContent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
