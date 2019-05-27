@@ -37,10 +37,26 @@ class DiscoveryFragment : BaseFragment() {
 
         if (discoveryAdapter == null) {
             val sections = listOf(
-                DiscoverySection(discoveryViewModel.popularContentState, discoveryViewModel.popularMovies),
-                DiscoverySection(discoveryViewModel.topRatedContentState, discoveryViewModel.topRatedMovies),
-                DiscoverySection(discoveryViewModel.topRevenueContentState, discoveryViewModel.topRevenueMovies),
-                DiscoverySection(discoveryViewModel.mostRecentContentState, discoveryViewModel.mostRecentMovies)
+                DiscoverySection(
+                    R.string.tv_discovery_section_title_popular,
+                    discoveryViewModel.popularContentState,
+                    discoveryViewModel.popularMovies
+                ),
+                DiscoverySection(
+                    R.string.tv_discovery_section_title_top_rated,
+                    discoveryViewModel.topRatedContentState,
+                    discoveryViewModel.topRatedMovies
+                ),
+                DiscoverySection(
+                    R.string.tv_discovery_section_title_top_revenue,
+                    discoveryViewModel.topRevenueContentState,
+                    discoveryViewModel.topRevenueMovies
+                ),
+                DiscoverySection(
+                    R.string.tv_discovery_section_title_most_recent,
+                    discoveryViewModel.mostRecentContentState,
+                    discoveryViewModel.mostRecentMovies
+                )
             )
 
             discoveryAdapter = DiscoveryAdapter(requireContext(), viewLifecycleOwner, sections) {

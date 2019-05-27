@@ -2,8 +2,18 @@
 
 <androidx.appcompat.widget.LinearLayoutCompat
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/view_discovery_section_height">
+    android:layout_height="@dimen/view_discovery_section_height"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvSectionTitle"
+        style="@style/TextView.SectionTitle"
+        android:layout_marginStart="@dimen/view_margin_half_regular"
+        android:layout_marginTop="@dimen/view_margin_small"
+        android:layout_marginEnd="@dimen/view_margin_half_regular"
+        tools:text="Popular" />
 
     <FrameLayout
         android:layout_width="match_parent"

@@ -5,6 +5,10 @@
     <string name="toolbar_discovery_title">Catalog</string>
     <string name="tv_discovery_section_content_empty">No items to display</string>
     <string name="tv_discovery_section_content_error">Unable to load section</string>
+    <string name="tv_discovery_section_title_popular">Popular</string>
+    <string name="tv_discovery_section_title_top_rated">Top Rated</string>
+    <string name="tv_discovery_section_title_top_revenue">Revenue</string>
+    <string name="tv_discovery_section_title_most_recent">Recently Released</string>
     <!-- END: Discovery -->
 
     <!-- Movie details -->

@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.widget.ContentLoadingProgressBar
 import androidx.lifecycle.LifecycleOwner
@@ -64,12 +65,13 @@ open class DiscoveryAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val moviesAdapter = MoviesAdapter(context, onMovieClick)
+        val item = sections[position]
+        holder.tvTitle.text = context.getString(item.titleRes)
         holder.rvMovies.apply {
             adapter = moviesAdapter
             nestedStates[holder.adapterPosition]?.let { layoutManager?.onRestoreInstanceState(it) }
             setRecycledViewPool(viewPool)
         }
-        val item = sections[position]
         item.state.observe(lifecycleOwner, Observer {
             holder.rvMovies.visibility = if (it == ViewContentState.READY) View.VISIBLE else View.GONE
             if (it == ViewContentState.LOADING) {
@@ -139,12 +141,14 @@ open class DiscoveryAdapter(
 }
 
 class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    val tvTitle: TextView = itemView.tvSectionTitle
     val rvMovies: RecyclerView = itemView.rvMovies
     val pbLoading: ContentLoadingProgressBar = itemView.pbLoading
     val tvContentStatus: AppCompatTextView = itemView.tvContentStatus
 }
 
 data class DiscoverySection(
+    val titleRes: Int,
     val state: LiveData<ViewContentState>,
     val data: LiveData<PagedList<Movie>>
 )
