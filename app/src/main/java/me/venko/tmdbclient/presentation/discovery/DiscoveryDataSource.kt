@@ -11,10 +11,6 @@ import me.venko.tmdbclient.core.model.discovery.Movie
 class DiscoveryDataSource(private val fetch: (Int, onReady: (List<Movie>) -> Unit) -> Unit) :
     PageKeyedDataSource<Int, Movie>() {
 
-    companion object {
-        private const val PAGE_INITIAL = 1
-    }
-
     override fun loadInitial(params: LoadInitialParams<Int>, callback: LoadInitialCallback<Int, Movie>) {
         fetch(PAGE_INITIAL) { callback.onResult(it, null, PAGE_INITIAL + 1) }
 
@@ -26,6 +22,10 @@ class DiscoveryDataSource(private val fetch: (Int, onReady: (List<Movie>) -> Uni
 
     override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, Movie>) {
 
+    }
+
+    companion object {
+        private const val PAGE_INITIAL = 1
     }
 }
 

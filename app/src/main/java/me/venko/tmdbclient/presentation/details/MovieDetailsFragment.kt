@@ -16,13 +16,6 @@ import me.venko.tmdbclient.utils.withArguments
  *
  */
 class MovieDetailsFragment : BaseFragment() {
-    companion object {
-        private const val ARG_MOVIE = "movie"
-
-        fun newInstance(movie: Movie) = MovieDetailsFragment().withArguments(
-            ARG_MOVIE to movie
-        )
-    }
 
     override val layoutId = R.layout.fragment_movie_details
 
@@ -39,5 +32,13 @@ class MovieDetailsFragment : BaseFragment() {
         tvMovieTitle.text = movie.title
         tvMovieRating.text = DecimalFormatter.formatRating(movie.voteAverage)
         tvMovieDescription.text = movie.overview
+    }
+
+    companion object {
+        private const val ARG_MOVIE = "movie"
+
+        fun newInstance(movie: Movie) = MovieDetailsFragment().withArguments(
+            ARG_MOVIE to movie
+        )
     }
 }

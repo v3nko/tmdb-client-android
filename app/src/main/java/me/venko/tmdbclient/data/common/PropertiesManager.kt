@@ -20,9 +20,8 @@ class PropertiesManager @Inject constructor(private val context: Context) {
     val tmdbApiKey: String
         get() = getStringValue(KEY_TMDB_API_KEY)
 
-    private fun getBoolValue(key: String, default: Boolean): Boolean {
-        return instance.getProperty(key)?.toBoolean() ?: default
-    }
+    private fun getBoolValue(key: String, default: Boolean): Boolean =
+        instance.getProperty(key)?.toBoolean() ?: default
 
     private fun getStringValue(key: String, default: String = "") =
         instance.getProperty(key, default)

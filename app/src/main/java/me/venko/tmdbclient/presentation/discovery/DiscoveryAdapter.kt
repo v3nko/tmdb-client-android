@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.widget.ContentLoadingProgressBar
 import androidx.lifecycle.LifecycleOwner
@@ -34,10 +33,6 @@ open class DiscoveryAdapter(
     private val sections: List<DiscoverySection>,
     private val onMovieClick: (Movie) -> Unit
 ) : RecyclerView.Adapter<ViewHolder>() {
-
-    companion object {
-        const val STATE_NESTED_STATES = "nestedStates"
-    }
 
     // Set of ViewHolders that is already bound but have not yet saved their state through recycling
     private val stateSavePendingViewHolders = mutableSetOf<ViewHolder>()
@@ -138,10 +133,14 @@ open class DiscoveryAdapter(
     private fun saveViewState(holder: ViewHolder) {
         nestedStates.put(holder.adapterPosition, holder.rvMovies.layoutManager?.onSaveInstanceState())
     }
+
+    companion object {
+        const val STATE_NESTED_STATES = "nestedStates"
+    }
 }
 
 class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val tvTitle: TextView = itemView.tvSectionTitle
+    val tvTitle: AppCompatTextView = itemView.tvSectionTitle
     val rvMovies: RecyclerView = itemView.rvMovies
     val pbLoading: ContentLoadingProgressBar = itemView.pbLoading
     val tvContentStatus: AppCompatTextView = itemView.tvContentStatus

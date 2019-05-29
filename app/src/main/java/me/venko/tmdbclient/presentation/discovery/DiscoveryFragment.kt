@@ -12,10 +12,6 @@ import me.venko.tmdbclient.presentation.common.fragment.BaseFragment
  */
 class DiscoveryFragment : BaseFragment() {
 
-    companion object {
-        fun newInstance() = DiscoveryFragment()
-    }
-
     override val layoutId: Int = R.layout.fragment_discovery
 
     private lateinit var discoveryViewModel: DiscoveryViewModel
@@ -81,5 +77,9 @@ class DiscoveryFragment : BaseFragment() {
     override fun onStop() {
         super.onStop()
         discoveryAdapter?.onStop()
+    }
+
+    companion object {
+        fun newInstance() = DiscoveryFragment()
     }
 }

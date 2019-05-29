@@ -17,10 +17,6 @@ import javax.inject.Inject
 @SuppressLint("Registered")
 abstract class BaseActivity : FragmentActivity() {
 
-    companion object {
-        private const val KEY_IS_TABLET = "isTablet"
-    }
-
     @Inject
     lateinit var navigatorHolder: NavigatorHolder
     private lateinit var navigator: Navigator
@@ -61,5 +57,9 @@ abstract class BaseActivity : FragmentActivity() {
     override fun onPause() {
         super.onPause()
         navigatorHolder.removeNavigator()
+    }
+
+    companion object {
+        private const val KEY_IS_TABLET = "isTablet"
     }
 }

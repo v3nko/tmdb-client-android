@@ -8,9 +8,10 @@ import me.venko.tmdbclient.presentation.common.fragment.BaseFragment
  *
  */
 class MovieDetailsPlaceholderFragment : BaseFragment() {
+
+    override val layoutId: Int = R.layout.fragment_movie_details_placeholder
+
     companion object {
         fun newInstance() = MovieDetailsPlaceholderFragment()
     }
-
-    override val layoutId: Int = R.layout.fragment_movie_details_placeholder
 }

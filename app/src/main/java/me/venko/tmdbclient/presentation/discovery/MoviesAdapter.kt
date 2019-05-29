@@ -22,18 +22,6 @@ import me.venko.tmdbclient.presentation.common.glide.TmdbImageModel
 class MoviesAdapter(val context: Context, val onItemClick: (Movie) -> Unit) :
     PagedListAdapter<Movie, MoviesAdapter.ViewHolder>(DIFF_CALLBACK) {
 
-    companion object {
-        val DIFF_CALLBACK: DiffUtil.ItemCallback<Movie> = object : DiffUtil.ItemCallback<Movie>() {
-            override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean {
-                return oldItem.id == newItem.id
-            }
-
-            override fun areContentsTheSame(oldItem: Movie, newItem: Movie): Boolean {
-                return oldItem == newItem
-            }
-        }
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.item_movie, parent, false)
         return ViewHolder(view)
@@ -54,4 +42,15 @@ class MoviesAdapter(val context: Context, val onItemClick: (Movie) -> Unit) :
         val ivMoviePoster: ImageView = itemView.ivMoviePoster
     }
 
+    companion object {
+        val DIFF_CALLBACK: DiffUtil.ItemCallback<Movie> = object : DiffUtil.ItemCallback<Movie>() {
+            override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean {
+                return oldItem.id == newItem.id
+            }
+
+            override fun areContentsTheSame(oldItem: Movie, newItem: Movie): Boolean {
+                return oldItem == newItem
+            }
+        }
+    }
 }

@@ -16,13 +16,6 @@ class TmdbImageLoader(
     modelCache: ModelCache<TmdbImageModel, GlideUrl>?
 ) : BaseGlideUrlLoader<TmdbImageModel>(concreteLoader, modelCache) {
 
-    companion object {
-        private const val BASE_URL = "https://image.tmdb.org/t/p/"
-
-        private const val SIZE_BACKDROP = "w500"
-        private const val SIZE_POSTER = "w185"
-    }
-
     override fun getUrl(model: TmdbImageModel?, width: Int, height: Int, options: Options?): String {
         return model?.imagePath?.let {
             Uri.Builder()
@@ -40,13 +33,16 @@ class TmdbImageLoader(
     }
 
     override fun handles(model: TmdbImageModel) = true
+
+    companion object {
+        private const val BASE_URL = "https://image.tmdb.org/t/p/"
+
+        private const val SIZE_BACKDROP = "w500"
+        private const val SIZE_POSTER = "w185"
+    }
 }
 
 class TmdbImageLoaderFactory : ModelLoaderFactory<TmdbImageModel, InputStream> {
-
-    companion object {
-        private const val MODEL_CACHE_SIZE = 500L
-    }
 
     private val modelCache = ModelCache<TmdbImageModel, GlideUrl>(MODEL_CACHE_SIZE)
 
@@ -55,6 +51,9 @@ class TmdbImageLoaderFactory : ModelLoaderFactory<TmdbImageModel, InputStream> {
 
     override fun teardown() = modelCache.clear()
 
+    companion object {
+        private const val MODEL_CACHE_SIZE = 500L
+    }
 }
 
 data class TmdbImageModel(val imagePath: String?, val imageType: ImageType) {
