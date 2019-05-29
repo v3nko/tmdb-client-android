@@ -100,8 +100,10 @@ class DiscoveryViewModel : BaseViewModel() {
                         }
                 }
                 is Result.Error -> {
-                    loge(result.exception) { "Popular movies loading error: ${result.exception.message}" }
-                    stateData.value = ViewContentState.ERROR
+                    loge(result.exception) { "Movies loading error: ${result.exception.message}" }
+                    if (stateData.value != ViewContentState.READY) {
+                        stateData.value = ViewContentState.ERROR
+                    }
                 }
             }
         }
